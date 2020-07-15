@@ -12,11 +12,18 @@ import keyboard
 from inputimeout import inputimeout, TimeoutOccurred
 
 
+# Define range of random jump intervals
 params = {'bg': (15, 200),
           'city': (90, 600),
           }
 
+
 def idle(loc):
+    """Idles by pressing the space bar at random intervals.
+    
+    Args:
+        loc (:obj:`str`): idling location ('bg' or 'city').
+    """
     print('Starting in 5s')
     time.sleep(5)
 
@@ -28,6 +35,9 @@ def idle(loc):
 
 
 def shutdown():
+    """Powers down the computer after maximum idle time is reached.
+    Useful when going to bed during that last AV game of the night.
+    """
     timeout = 30
     prompt = f'Press any key within {timeout}s to cancel shutdown'
 
