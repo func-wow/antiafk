@@ -23,8 +23,8 @@ python antiafk.py city
 ``` 
 will idle with a slow jump frequency (ideal for idling during queue).
 
-- *'bg' jumps happen every 15 to 200 seconds.*
-- *'city' jumps happen every 90 to 600 seconds.*
+- *bg* jumps happen every 15 to 200 seconds.
+- *city* jumps happen every 90 to 600 seconds.
 
 #### Program timeout
 Use the `-t` option to specify a time limit on running the script. 
