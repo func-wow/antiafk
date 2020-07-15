@@ -46,7 +46,7 @@ def shutdown():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Idle helper.')
-    parser.add_argument('loc', type=str, help='bg or city')
+    parser.add_argument('loc', type=str, default='bg', help='bg or city')
     parser.add_argument('-t', type=float, default=None, help='Idle duration')
     parser.add_argument('-s', action='store_true', help='Shutdown after')
     args = parser.parse_args()
