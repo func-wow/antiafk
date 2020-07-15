@@ -22,7 +22,7 @@ def idle(loc):
 
     while True:
         keyboard.press_and_release('space')
-        delay = random.randint(*params[loc[0]])
+        delay = random.randint(*params[loc])
         print(f'Next in {delay}s')
         time.sleep(delay)
 
@@ -46,7 +46,7 @@ def shutdown():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Idle helper.')
-    parser.add_argument('loc', type=str, default='bg', nargs='*', help='bg or city')
+    parser.add_argument('loc', default=['bg'], nargs='*', help='bg or city')
     parser.add_argument('-t', type=float, default=None, help='Idle duration')
     parser.add_argument('-s', action='store_true', help='Shutdown after')
     args = parser.parse_args()
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         args.t = 3600*args.t
         print(f'Max idle time {args.t:.0f}s')
 
-    p = multiprocessing.Process(target=idle, args=(args.loc,))
+    p = multiprocessing.Process(target=idle, args=(args.loc[0],))
     p.start()
     p.join(args.t)
 
