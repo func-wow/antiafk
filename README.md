@@ -8,13 +8,13 @@ Python script to avoid getting booted.
 4. Enter `pip install inputimeout`
 5. Enter `pip install keyboard`
 
-### Usage
+### Basic use
 1. Navigate to the previously downloaded antiafk folder
 2. Shift+RightClick anywhere in that folder
 3. Click Open PowerShell window here
 4. Enter `python antiafk.py`
 
-### Options
+### Advanced use
 #### Jump frequency
 Specify the `bg` or `city` option if you are afking in a city or BG. When not specified, the `bg` option is used by default. Using the `city` option in a BG will probably hit you with deserter.  
 For example, 
@@ -23,8 +23,8 @@ python antiafk.py city
 ``` 
 will idle with a slow jump frequency (ideal for idling during queue).
 
-- *bg* jumps happen every 15 to 200 seconds.
-- *city* jumps happen every 90 to 600 seconds.
+- **bg** jumps happen every 15 to 200 seconds.
+- **city** jumps happen every 90 to 600 seconds.
 
 #### Program timeout
 Use the `-t` option to specify a time limit on running the script. 
