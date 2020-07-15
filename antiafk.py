@@ -17,7 +17,6 @@ params = {'bg': (15, 200),
           'city': (90, 600),
           }
 
-
 def idle(loc):
     """Idles by pressing the space bar at random intervals.
     
@@ -32,7 +31,6 @@ def idle(loc):
         delay = random.randint(*params[loc])
         print(f'Next in {delay}s')
         time.sleep(delay)
-
 
 def shutdown():
     """Powers down the computer after maximum idle time is reached.
