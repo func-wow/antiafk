@@ -22,7 +22,7 @@ def idle(loc):
 
     while True:
         keyboard.press_and_release('space')
-        delay = random.randint(*params[loc])
+        delay = random.randint(*params[loc[0]])
         print(f'Next in {delay}s')
         time.sleep(delay)
 
