@@ -7,6 +7,7 @@ Python script to avoid getting booted.
 3. Open the Windows PowerShell or Command Prompt
 4. Enter `pip install inputimeout`
 5. Enter `pip install keyboard`
+6. Enter `pip install pyautogui`
 
 ### Basic use
 1. Navigate to the previously downloaded antiafk folder
@@ -17,26 +18,34 @@ Python script to avoid getting booted.
 ### Advanced use
 #### Jump frequency
 Specify the `bg` or `city` option if you are afking in a city or BG. When not specified, the `bg` option is used by default. Using the `city` option in a BG will probably hit you with deserter.  
-For example, 
+For example,
 ```
 python antiafk.py city
-``` 
+```
 will idle with a slow jump frequency (ideal for idling during queue).
 
 - 'bg' jumps happen every 15 to 200 seconds.
 - 'city' jumps happen every 90 to 600 seconds.
 
+#### Automatically enter battle
+Use the `-j` option to avoid missing a queue by automatically joining battlegrounds. This option will check
+for a queue pop every 30 seconds and click on 'Enter Battle' when the button is available. For example,
+```
+python antiafk.py -j
+```
+will idle for using 'bg' intervals then automatically join the BG.
+
 #### Program timeout
-Use the `-t` option to specify a time limit on running the script. 
-For example, 
+Use the `-t` option to specify a time limit on running the script. For example,
 ```
 python antiafk.py city -t 2.5
-``` 
+```
 will idle for 2.5 hours using 'city' intervals then turn off the program.
 
 #### Automated computer shutdown
-Use the `-s` option to automatically shutdown the computer after the time period specified by `-t`. This is really useful if you want to go to bed during your last AV of the night.
-For example, 
+Use the `-s` option to automatically shutdown the computer after the time period
+specified by `-t`. This is really useful if you want to go to bed during your
+last AV of the night. For example,
 ```
 python antiafk.py bg -t 1 -s
 ```

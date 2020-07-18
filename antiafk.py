@@ -1,5 +1,5 @@
 # @Date:   2020-06-17T19:51:28-04:00
-# @Last modified time: 2020-07-08T06:53:05-04:00
+# @Last modified time: 2020-07-17T20:59:54-04:00
 
 
 import os
@@ -10,6 +10,7 @@ import multiprocessing
 
 import keyboard
 from inputimeout import inputimeout, TimeoutOccurred
+import pyautogui
 
 
 # Define range of random jump intervals
@@ -17,9 +18,21 @@ params = {'bg': (15, 200),
           'city': (90, 600),
           }
 
+def enter_battle():
+    """Automatically joins a battleground.
+
+    """
+    while True:
+        time.sleep(30)
+        enter_button = pyautogui.locateOnScreen('./images/enter-battle.png')
+        if enter_button is not None:
+            print('Joining BG')
+            point = pyautogui.center(enter_button)
+            pyautogui.click(*point)
+
 def idle(loc):
     """Idles by pressing the space bar at random intervals.
-    
+
     Args:
         loc (:obj:`str`): idling location ('bg' or 'city').
     """
@@ -57,11 +70,16 @@ if __name__ == '__main__':
     parser.add_argument('loc', default=['bg'], nargs='*', help='bg or city')
     parser.add_argument('-t', type=float, default=None, help='Idle duration')
     parser.add_argument('-s', action='store_true', help='Shutdown after')
+    parser.add_argument('-j', action='store_true', help='Auto join BG')
     args = parser.parse_args()
 
     if args.t is not None:
         args.t = 3600*args.t
         print(f'Max idle time {args.t:.0f}s')
+
+    if args.j:
+        j = multiprocessing.Process(target=enter_battle)
+        j.start()
 
     p = multiprocessing.Process(target=idle, args=(args.loc[0],))
     p.start()
@@ -70,7 +88,8 @@ if __name__ == '__main__':
     if p.is_alive():
         print('\n    Process terminated.\n')
         p.terminate()
-        p.join()
+        if args.j:
+            j.terminate()
 
     if args.s:
         shutdown()
