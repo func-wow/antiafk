@@ -13,7 +13,9 @@ Python script to avoid getting booted.
 1. Navigate to the previously downloaded antiafk folder
 2. Shift+RightClick anywhere in that folder
 3. Click Open PowerShell window here
-4. Enter `python antiafk.py`
+4. Enter `python antiafk.py` to start the program
+
+Switch back to the WoW window and let the script run in the background.
 
 ### Advanced use
 #### Jump frequency
