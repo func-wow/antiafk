@@ -35,7 +35,7 @@ for a queue pop every 30 seconds and click on 'Enter Battle' when the button is 
 ```
 python antiafk.py -j
 ```
-will idle for using 'bg' intervals then automatically join the BG.
+will idle using 'bg' intervals and automatically join the BG when the queue pops.
 
 #### Program timeout
 Use the `-t` option to specify a time limit on running the script. For example,
