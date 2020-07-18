@@ -3,7 +3,7 @@ Python script to avoid getting booted.
 
 ### Installation
 1. Download and install [Python](https://www.python.org/ftp/python/3.8.4/python-3.8.4.exe)
-2. Download this repository to your computer
+2. Download this repository to your computer (Code -> Download ZIP)
 3. Open the Windows PowerShell or Command Prompt
 4. Enter `pip install inputimeout`
 5. Enter `pip install keyboard`
