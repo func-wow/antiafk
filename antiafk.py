@@ -1,5 +1,5 @@
 # @Date:   2020-06-17T19:51:28-04:00
-# @Last modified time: 2020-07-17T20:59:54-04:00
+# @Last modified time: 2020-07-27T16:36:41-04:00
 
 
 import os
@@ -41,6 +41,8 @@ def idle(loc):
 
     while True:
         keyboard.press_and_release('space')
+        time.sleep(1)
+        keyboard.press_and_release('shift+/')
         delay = random.randint(*params[loc])
         print(f'Next in {delay}s')
         time.sleep(delay)
